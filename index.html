@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sejarah Nabi Muhammad SAW | Reyhan Zada Arsyaka</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #0d47a1; /* Biru Tua */
+            --secondary-color: #1565c0; /* Biru Sedang */
+            --accent-color: #e3f2fd; /* Biru Sangat Muda */
+            --text-color: #333;
+            --light-text-color: #fafafa;
+            --bg-color: #e1f5fe; /* Biru Muda Background */
+            --quote-bg: #bbdefb; /* Biru Muda untuk kutipan */
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+            padding: 3rem 0;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+        
+        header .copyright-info {
+            font-size: 0.9rem;
+            font-weight: 400;
+            margin-top: 1rem;
+            opacity: 0.8;
+        }
+
+        nav {
+            background-color: var(--secondary-color);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            display: block;
+            color: var(--light-text-color);
+            padding: 1.2rem 1.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-transform: uppercase;
+        }
+
+        nav ul li a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .hamburger-menu {
+            display: none; /* Sembunyikan secara default */
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--light-text-color);
+            cursor: pointer;
+            padding: 1rem;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 2rem auto;
+            background-color: #ffffff;
+            padding: 3rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            border-bottom: 4px solid var(--secondary-color);
+            padding-bottom: 1rem;
+            margin-top: 3rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+        }
+
+        .content-image {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: cover;
+            display: block;
+            margin: 2.5rem 0;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .content-image:hover {
+            transform: scale(1.02);
+        }
+
+        p {
+            font-size: 1.1rem;
+            text-align: justify;
+            margin-bottom: 1.5rem;
+        }
+        
+        .quote-box {
+            background-color: var(--quote-bg);
+            border-left: 6px solid var(--secondary-color);
+            padding: 2rem;
+            margin: 2.5rem 0;
+            font-style: italic;
+            color: #444;
+            border-radius: 10px;
+        }
+        
+        .quote-box p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+            margin-top: 3rem;
+            font-size: 0.9rem;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+        
+        footer .code-by {
+            margin-top: 1rem;
+            opacity: 0.7;
+        }
+
+        /* MEDIA QUERIES untuk Tampilan Mobile */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+            
+            header p {
+                font-size: 1rem;
+            }
+
+            header .copyright-info {
+                font-size: 0.8rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                display: none; /* Sembunyikan menu pada tampilan mobile */
+                width: 100%;
+                background-color: var(--primary-color);
+                position: absolute;
+                top: 100%;
+                left: 0;
+            }
+            
+            nav ul.active {
+                display: flex; /* Tampilkan menu saat kelas 'active' ditambahkan */
+            }
+
+            nav ul li a {
+                padding: 1rem;
+                text-align: center;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .hamburger-menu {
+                display: block; /* Tampilkan tombol hamburger */
+            }
+
+            .nav-wrapper {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .container {
+                padding: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Sejarah Nabi Muhammad SAW</h1>
+        <p>Sang Pembawa Cahaya dan Rahmat bagi Seluruh Alam</p>
+        <div class="copyright-info">
+            <p>Dibuat oleh: <strong>Reyhan Zada Arsyaka</strong></p>
+            <p>Kelas: <strong>XII.2</strong> | Sekolah: <strong>SMAN 1 Baturetno</strong></p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-wrapper">
+            <button class="hamburger-menu" id="hamburger-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul id="nav-list">
+                <li><a href="#kelahiran">Kelahiran</a></li>
+                <li><a href="#masa-muda">Masa Muda</a></li>
+                <li><a href="#wahyu">Wahyu Pertama</a></li>
+                <li><a href="#hijrah">Hijrah</a></li>
+                <li><a href="#madinah">Negara Madinah</a></li>
+                <li><a href="#perjuangan">Perjuangan</a></li>
+                <li><a href="#wafat">Haji Wada' & Wafat</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section id="kelahiran">
+            <h2 class="section-title">Kelahiran dan Masa Kecil yang Penuh Cobaan</h2>
+            <p><strong>Nabi Muhammad SAW</strong> dilahirkan di tengah kegelapan Jahiliyah, di kota Mekkah yang saat itu dipenuhi penyembahan berhala. Beliau lahir pada tahun yang dikenal sebagai <strong>Tahun Gajah</strong>, sekitar 570 Masehi. Nama Muhammad, yang berarti "yang terpuji", diberikan oleh sang kakek, Abdul Muthalib. Kehadirannya telah dinanti-nanti, membawa pertanda-pertanda kebesaran, meski sejak awal telah diuji dengan cobaan.</p>
+            <p>Ayahnya, Abdullah, wafat sebelum beliau lahir. Kemudian, pada usia enam tahun, ibunya, Aminah, juga meninggalkannya. Beliau menjadi yatim piatu sebatang kara dan diasuh oleh kakeknya, Abdul Muthalib, yang sangat menyayanginya. Setelah kakeknya wafat, pengasuhan beralih kepada pamannya, Abu Thalib, yang menjadi pelindung terkuatnya di masa-masa awal dakwah.</p>
+            <img src="https://via.placeholder.com/1100x450/0d47a1/e3f2fd?text=Ilustrasi+Kota+Mekkah+Tahun+Gajah" alt="Ilustrasi Kota Mekkah pada masa kelahiran Nabi Muhammad" class="content-image">
+        </section>
+        
+        <section id="masa-muda">
+            <h2 class="section-title">Masa Muda: Sang Al-Amin yang Terpercaya</h2>
+            <p>Sejak kecil hingga dewasa, Nabi Muhammad SAW dikenal dengan akhlaknya yang mulia. Beliau jujur, amanah, dan tidak pernah berbohong. Karena sifat-sifat luhur ini, masyarakat Mekkah memberinya gelar **Al-Amin** (Orang yang Dapat Dipercaya). Beliau mengawali hidup sebagai penggembala kambing dan kemudian menjadi pedagang. Kejujuran beliau dalam berdagang menarik perhatian saudagar wanita kaya raya bernama **Khadijah binti Khuwailid**.</p>
+            <p>Pada usia 25 tahun, Nabi Muhammad SAW menikah dengan Khadijah. Khadijah menjadi istri pertama dan pendukung setia beliau, memberikan kekuatan dan ketenangan di saat-saat paling sulit. Pernikahan ini menjadi salah satu ikatan paling suci dan harmonis dalam sejarah.</p>
+        </section>
+
+        <section id="wahyu">
+            <h2 class="section-title">Penerimaan Wahyu dan Awal Mula Risalah</h2>
+            <p>Pada usia 40 tahun, saat sedang menyendiri di <strong>Gua Hira</strong> untuk beribadah dan merenung, beliau didatangi oleh Malaikat Jibril. Jibril menyampaikan wahyu pertama, yaitu surah Al-Alaq ayat 1-5, yang dimulai dengan perintah <strong>"Iqra!" (Bacalah!)</strong>. Momen ini menjadi tonggak sejarah yang mengubah peradaban manusia. Beliau diangkat menjadi Rasul, pembawa pesan Allah SWT.</p>
+            <p>Dakwah dimulai secara sembunyi-sembunyi selama tiga tahun, dimulai dari keluarga terdekat. Setelah itu, beliau mulai berdakwah secara terang-terangan, yang memicu perlawanan sengit dari kaum Quraisy. Mereka khawatir ajaran Islam akan meruntuhkan tatanan sosial dan ekonomi yang telah lama mereka bangun.</p>
+            <div class="quote-box">
+                <p>"Hai orang yang berselimut (Muhammad), bangunlah, lalu berilah peringatan!"</p>
+                <p>— Al-Qur'an, Surah Al-Muddassir (74):1-2</p>
+            </div>
+        </section>
+
+        <section id="hijrah">
+            <h2 class="section-title">Hijrah ke Madinah: Awal Peradaban Baru</h2>
+            <p>Tekanan dan penyiksaan kaum Quraisy semakin brutal, memaksa beliau dan para pengikutnya untuk hijrah ke kota <strong>Yatsrib</strong>. Peristiwa hijrah pada tahun 622 M bukan hanya perpindahan fisik, tetapi sebuah strategi besar untuk menyelamatkan umat Islam. Yatsrib kemudian berganti nama menjadi <strong>Madinah</strong>, yang berarti "kota". Peristiwa ini menjadi penanda dimulainya Kalender Hijriah.</p>
+            <p>Di Madinah, beliau berhasil menyatukan kaum Muhajirin (pendatang) dan Anshar (penolong) dalam persaudaraan yang erat. Beliau membangun sebuah masyarakat yang harmonis dan berkeadilan.</p>
+        </section>
+
+        <section id="madinah">
+            <h2 class="section-title">Membangun Negara Madinah dan Piagam Madinah</h2>
+            <p>Sebagai pemimpin negara, beliau mendirikan <strong>Masjid Nabawi</strong>, tidak hanya sebagai tempat ibadah, melainkan juga pusat pemerintahan dan pendidikan. Beliau menyusun **Piagam Madinah**, sebuah konstitusi yang mengatur hubungan antara seluruh penduduk Madinah, baik Muslim maupun non-Muslim. Piagam ini menjamin kebebasan beragama dan hak-hak sipil, menjadikannya salah satu dokumen paling progresif di masanya.</p>
+            <p>Kepemimpinan beliau membawa Madinah menjadi pusat peradaban Islam yang kuat, menjunjung tinggi toleransi dan keadilan.</p>
+            <img src="https://via.placeholder.com/1100x450/1565c0/e3f2fd?text=Ilustrasi+Piagam+Madinah+dan+Kehidupan+di+Sana" alt="Ilustrasi kehidupan di Madinah dan Piagam Madinah" class="content-image">
+        </section>
+
+        <section id="perjuangan">
+            <h2 class="section-title">Perjuangan dan Kemenangan Fathu Makkah</h2>
+            <p>Selama di Madinah, Nabi Muhammad SAW menghadapi berbagai tantangan, termasuk peperangan dengan kaum Quraisy. Perang Badar, Uhud, dan Khandaq adalah bukti kesabaran dan strategi beliau. Namun, tujuan utama beliau bukanlah peperangan, melainkan perdamaian dan penyebaran kebenaran.</p>
+            <p>Puncaknya, pada tahun 630 M, beliau memimpin pasukan Muslim untuk menaklukkan Mekkah. Kejadian yang dikenal sebagai <strong>Fathu Makkah</strong> (Penaklukan Mekkah) ini adalah salah satu momen paling agung. Beliau memasuki kota dengan rendah hati, mengampuni semua penduduk Mekkah, dan membersihkan Ka'bah dari berhala. Ini adalah kemenangan yang diraih tanpa pertumpahan darah, menunjukkan betapa besar kasih sayang dan kebijaksanaan beliau.</p>
+        </section>
+
+        <section id="wafat">
+            <h2 class="section-title">Haji Wada' dan Akhir Perjalanan</h2>
+            <p>Pada tahun ke-10 Hijriah (632 M), Nabi Muhammad SAW melaksanakan haji terakhirnya, yang dikenal sebagai <strong>Haji Wada'</strong> (Haji Perpisahan). Dalam khotbahnya di Arafah, beliau menyampaikan pesan-pesan universal tentang persamaan, keadilan, dan pentingnya berpegang teguh pada Al-Qur'an dan Sunnah. Pesan ini adalah warisan abadi bagi seluruh umat manusia.</p>
+            <p>Beberapa bulan setelah haji tersebut, beliau jatuh sakit. Pada hari Senin, tanggal 12 Rabiul Awal tahun 11 H (632 M), Nabi Muhammad SAW wafat di Madinah pada usia 63 tahun, setelah menyelesaikan seluruh risalahnya. Kepergian beliau adalah duka, namun ajarannya akan terus hidup, menjadi cahaya penerang jalan bagi seluruh umat manusia.</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025. Sejarah Nabi Muhammad SAW. All rights reserved.</p>
+        <p class="code-by">Code by: <strong>AI Gemini</strong></p>
+    </footer>
+
+    <script>
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const navList = document.getElementById('nav-list');
+
+        hamburgerBtn.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>
